@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M&R TEXTIL | Confección Integral</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.ico" />
+
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -74,8 +76,15 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 border-t-4 border-black shadow-lg hover:shadow-2xl transition">
-                <i class="fa-solid fa-vest text-4xl mb-4 gold-text"></i>
+<div class="bg-white p-8 border-t-4 border-black shadow-lg hover:shadow-2xl transition">
+    <div class="text-4xl mb-4 gold-text">
+        <i class="fa-brands fa-sketch"></i>
+    </div>
+
+
+
+
+
                 <h3 class="text-xl font-bold mb-2">Línea Vestir</h3>
                 <p class="text-gray-600 mb-4 text-sm">Ropa formal, gala y producción para diseñadores. Detalle y exclusividad en cada costura.</p>
                 <ul class="text-xs space-y-2 text-gray-500 uppercase tracking-tighter">
@@ -116,7 +125,114 @@
         id="galeria-dinamica"
         class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
     </div>
+    <div class="flex justify-center gap-6 mt-10">
+    <button
+        id="prevBtn"
+        class="px-6 py-2 border border-gold text-gold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition"
+    >
+        ← Anterior
+    </button>
+
+    <button
+        id="nextBtn"
+        class="px-6 py-2 border border-gold text-gold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition"
+    >
+        Siguiente →
+    </button>
+    </div>
+
+<section id="contacto" class="py-20 bg-gray-100 px-8">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-light uppercase tracking-widest mb-4">
+            Contacto
+        </h2>
+        <div class="w-20 h-1 bg-gold mx-auto mb-12"></div>
+
+        <p class="text-gray-600 mb-14 max-w-2xl mx-auto">
+            Escríbenos directamente según la línea que necesitas y te atenderemos de forma personalizada.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- Línea Vestir -->
+            <div class="bg-white p-8 shadow-lg border-t-4 border-yellow-500">
+                <div class="text-4xl gold-text mb-4">
+                    <i class="fa-brands fa-sketch"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Línea Vestir</h3>
+                <p class="text-sm text-gray-600 mb-6">
+                    Alta costura, vestidos de fiesta, novias y confección personalizada.
+                </p>
+                <a
+                    href="https://wa.me/573024122290"
+                    target="_blank"
+                    class="inline-block border border-gold px-6 py-3 text-xs uppercase tracking-widest gold-text hover:bg-gold hover:text-black transition"
+                >
+                    WhatsApp Vestir
+                </a>
+            </div>
+
+            <!-- Línea Carnaval -->
+            <div class="bg-white p-8 shadow-lg border-t-4 border-yellow-500">
+                <div class="text-4xl gold-text mb-4">
+                    <i class="fa-solid fa-masks-theater"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Línea Carnaval</h3>
+                <p class="text-sm text-gray-600 mb-6">
+                    Vestuario artístico, disfraces y trajes para eventos culturales.
+                </p>
+                <a
+                    href="https://wa.me/573024122290"
+                    target="_blank"
+                    class="inline-block border border-gold px-6 py-3 text-xs uppercase tracking-widest gold-text hover:bg-gold hover:text-black transition"
+                >
+                    WhatsApp Carnaval
+                </a>
+            </div>
+
+            <!-- Línea Uniformes -->
+            <div class="bg-white p-8 shadow-lg border-t-4 border-blue-900">
+                <div class="text-4xl gold-text mb-4">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Uniformes & Dotación</h3>
+                <p class="text-sm text-gray-600 mb-6">
+                    Dotación industrial, clínica, escolar y empresarial.
+                </p>
+                <a
+                    href="https://wa.me/573011931181"
+                    target="_blank"
+                    class="inline-block border border-gold px-6 py-3 text-xs uppercase tracking-widest gold-text hover:bg-gold hover:text-black transition"
+                >
+                    WhatsApp Uniformes
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Instagram -->
+            <p class="text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Síguenos en Instagram
+            </p>
+
+            <a
+                href="https://www.instagram.com/myr.textil/"
+                target="_blank"
+                class="inline-flex items-center gap-3 hover:text-yellow-600 transition"
+            >
+                <i class="fa-brands fa-instagram text-2xl gold-text"></i>
+                <span class="text-sm tracking-wide">
+    @MYR.TEXTIL
+</span>
+
+</a>
+
+    </div>
 </section>
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
@@ -124,15 +240,22 @@
 const FOLDER_ID = "195n6SKbjrZT6CxbgTOzhRZUrSIvJpKye";
 const API_KEY = "AIzaSyB5sBhOa9m1NAJUtVb7LPZlY_ReEalMm9Y";
 
-fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => {
-    const gallery = document.getElementById("galeria-dinamica");
+const IMAGES_PER_PAGE = 4;
+let currentPage = 0;
+let images = [];
 
-    data.files
-      .filter(file => file.mimeType.startsWith("image/"))
-      .forEach(file => {
+const gallery = document.getElementById("galeria-dinamica");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
+function renderGallery() {
+    gallery.innerHTML = "";
+
+    const start = currentPage * IMAGES_PER_PAGE;
+    const end = start + IMAGES_PER_PAGE;
+    const pageImages = images.slice(start, end);
+
+    pageImages.forEach(file => {
         const imgUrl = `https://lh3.googleusercontent.com/d/${file.id}`;
 
         const link = document.createElement("a");
@@ -143,13 +266,46 @@ fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fie
         const img = document.createElement("img");
         img.src = imgUrl;
         img.loading = "lazy";
-        img.className = "object-cover aspect-square w-full h-full rounded hover:opacity-90 transition";
+        img.className =
+            "object-cover aspect-square w-full h-full rounded transition hover:opacity-90";
 
         link.appendChild(img);
         gallery.appendChild(link);
-      });
-  })
-  .catch(err => console.error("Error galería:", err));
+    });
+
+    prevBtn.disabled = currentPage === 0;
+    nextBtn.disabled = end >= images.length;
+}
+
+prevBtn.addEventListener("click", () => {
+    if (currentPage > 0) {
+        currentPage--;
+        renderGallery();
+    }
+});
+
+nextBtn.addEventListener("click", () => {
+    if ((currentPage + 1) * IMAGES_PER_PAGE < images.length) {
+        currentPage++;
+        renderGallery();
+    }
+});
+
+fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+        images = data.files.filter(f => f.mimeType.startsWith("image/"));
+
+        // Aleatorizar imágenes (Fisher–Yates)
+        for (let i = images.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [images[i], images[j]] = [images[j], images[i]];
+        }
+
+        renderGallery();
+    })
+
+    .catch(err => console.error("Error galería:", err));
 </script>
 
 </body>
