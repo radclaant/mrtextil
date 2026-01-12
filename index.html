@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M&R TEXTIL | Confección Integral</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+  rel="stylesheet"
+/>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .gold-text { color: #D4AF37; }
@@ -99,47 +104,36 @@
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-            <div class="aspect-square bg-gray-800 hover:opacity-75 transition cursor-pointer overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500" class="object-cover h-full w-full">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition">
-                    <span class="text-xs border border-white p-2 uppercase">Vestir</span>
-                </div>
-            </div>
-            <div class="aspect-square bg-gray-800 hover:opacity-75 transition cursor-pointer overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1596753426901-d0f1742a10ce?auto=format&fit=crop&w=500" class="object-cover h-full w-full">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition">
-                    <span class="text-xs border border-white p-2 uppercase">Carnaval</span>
-                </div>
-            </div>
-            <div class="aspect-square bg-gray-800 hover:opacity-75 transition cursor-pointer overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1582533089852-02402220abd7?auto=format&fit=crop&w=500" class="object-cover h-full w-full">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition">
-                    <span class="text-xs border border-white p-2 uppercase">Uniformes</span>
-                </div>
-            </div>
-            <div class="aspect-square bg-gray-800 hover:opacity-75 transition cursor-pointer overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=500" class="object-cover h-full w-full">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition">
-                    <span class="text-xs border border-white p-2 uppercase">Proceso</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer id="contacto" class="py-20 px-8 bg-white text-center">
-        <h2 class="text-3xl mb-8 font-light uppercase tracking-widest">Contacto</h2>
-        <div class="max-w-xl mx-auto space-y-4">
-            <p class="text-gray-600">¿Tienes un proyecto en mente? Permítenos asesorarte.</p>
-            <div class="flex flex-col space-y-2 font-bold tracking-widest text-sm">
-                <span><i class="fa-solid fa-phone gold-text mr-2"></i> +XX XXX XXXXXXX</span>
-                <span><i class="fa-solid fa-envelope gold-text mr-2"></i> contacto@mrtextil.com</span>
-                <span><i class="fa-solid fa-location-dot gold-text mr-2"></i> Barranquilla, Colombia</span>
-            </div>
-            <div class="pt-8">
-                <p class="text-[10px] text-gray-400 uppercase tracking-widest">© 2026 M&R TEXTIL - Calidad que se viste</p>
-            </div>
-        </div>
+  <a href="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200"
+     data-lightbox="galeria"
+     data-title="Línea Vestir"
+     class="block aspect-square overflow-hidden group">
+    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500"
+         class="object-cover w-full h-full transition group-hover:scale-105">
+  </a>
+
+  <a href="https://images.unsplash.com/photo-1596753426901-d0f1742a10ce?auto=format&fit=crop&w=1200"
+     data-lightbox="galeria"
+     data-title="Carnaval de Barranquilla"
+     class="block aspect-square overflow-hidden group">
+    <img src="https://images.unsplash.com/photo-1596753426901-d0f1742a10ce?auto=format&fit=crop&w=500"
+         class="object-cover w-full h-full transition group-hover:scale-105">
+  </a>
+
+  <a href="https://images.unsplash.com/photo-1582533089852-02402220abd7?auto=format&fit=crop&w=1200"
+     data-lightbox="galeria"
+     data-title="Uniformes Institucionales"
+     class="block aspect-square overflow-hidden group">
+    <img src="https://images.unsplash.com/photo-1582533089852-02402220abd7?auto=format&fit=crop&w=500"
+         class="object-cover w-full h-full transition group-hover:scale-105">
+  </a>
+
+</div>
+
     </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
 
 </body>
 </html>
