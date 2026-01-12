@@ -71,7 +71,7 @@
                 <p class="text-gray-600 mb-4 text-sm">Ropa formal, gala y producción para diseñadores. Detalle y exclusividad en cada costura.</p>
                 <ul class="text-xs space-y-2 text-gray-500 uppercase tracking-tighter">
                     <li>• Vestidos de fiesta</li>
-                    <li>• Sobremedidas</li>
+                    <li>• Novias</li>
                     <li>• Vestidos Casuales</li>
                     <li>• Alta costura</li>
                 </ul>
@@ -103,36 +103,45 @@
             <p class="text-gray-400 mt-2 italic text-sm italic">Click para ampliar la imagen</p>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+       
 
-  <a href="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200"
-     data-lightbox="galeria"
-     data-title="Línea Vestir"
-     class="block aspect-square overflow-hidden group">
-    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500"
-         class="object-cover w-full h-full transition group-hover:scale-105">
-  </a>
 
-  <a href="https://images.unsplash.com/photo-1596753426901-d0f1742a10ce?auto=format&fit=crop&w=1200"
-     data-lightbox="galeria"
-     data-title="Carnaval de Barranquilla"
-     class="block aspect-square overflow-hidden group">
-    <img src="https://images.unsplash.com/photo-1596753426901-d0f1742a10ce?auto=format&fit=crop&w=500"
-         class="object-cover w-full h-full transition group-hover:scale-105">
-  </a>
 
-  <a href="https://images.unsplash.com/photo-1582533089852-02402220abd7?auto=format&fit=crop&w=1200"
-     data-lightbox="galeria"
-     data-title="Uniformes Institucionales"
-     class="block aspect-square overflow-hidden group">
-    <img src="https://images.unsplash.com/photo-1582533089852-02402220abd7?auto=format&fit=crop&w=500"
-         class="object-cover w-full h-full transition group-hover:scale-105">
-  </a>
-
-</div>
+        <div 
+            id="galeria-dinamica"
+            class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            </div>
+        
 
     </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+const FOLDER_ID = "195n6SKbjrZT6CxbgTOzhRZUrSIvJpKye";
+const API_KEY = "AIzaSyB5sBhOa9m1NAJUtVb7LPZlY_ReEalMm9Y";
+
+fetch(`https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`)
+  .then(res => res.json())
+  .then(data => {
+    const gallery = document.getElementById("galeria-dinamica");
+
+    data.files
+      .filter(file => file.mimeType.startsWith("image/"))
+      .forEach(file => {
+        const link = document.createElement("a");
+        link.href = `https://drive.google.com/uc?id=${file.id}`;
+        link.setAttribute("data-lightbox", "galeria");
+        link.setAttribute("data-title", file.name);
+
+        const img = document.createElement("img");
+        img.src = `https://drive.google.com/uc?id=${file.id}`;
+        img.className = "object-cover aspect-square w-full h-full rounded transition hover:opacity-90";
+
+        link.appendChild(img);
+        gallery.appendChild(link);
+      });
+  })
+  .catch(err => console.error("Error galería:", err));
+</script>
 
 
 </body>
